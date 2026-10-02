@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaurav Choudhary | Senior Recruiter & Talent Acquisition Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-primary: #060a14;
+      --bg-secondary: #0c1324;
+      --bg-card: rgba(18, 27, 49, 0.7);
+      --bg-card-hover: rgba(26, 38, 68, 0.85);
+      --accent-gold: #d4a234;
+      --accent-gold-glow: rgba(212, 162, 52, 0.25);
+      --accent-blue: #3b82f6;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(212, 162, 52, 0.35);
+      --badge-bg: rgba(212, 162, 52, 0.12);
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(212, 162, 52, 0.06) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(6, 10, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--accent-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-action {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #060a14;
+    }
+
+    .btn-gold:hover {
+      background: #e5b244;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-gold-glow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: var(--badge-bg);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 9rem 0 5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-accent);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .hero-title {
+      font-size: 3.25rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #fff 30%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.2rem;
+    }
+
+    .avatar-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+    }
+
+    .hero-card-details h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .hero-card-details p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contact-spec-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .contact-spec-label {
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-spec-value {
+      color: var(--text-main);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contact-spec-value a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    /* Metrics Strip */
+    .metrics-section {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(12, 19, 36, 0.5);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .metric-item h3 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section Utilities */
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    /* Experience Timeline */
+    .experience-section {
+      padding: 6rem 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 21px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background: var(--bg-primary);
+      border: 3px solid var(--accent-gold);
+      border-radius: 50%;
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .timeline-company {
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .timeline-duration {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .timeline-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+    }
+
+    /* Client Grid */
+    .clients-section {
+      padding: 5rem 0;
+      background: rgba(12, 19, 36, 0.4);
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .client-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .client-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+    }
+
+    .client-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .client-category {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+
+    /* Skills & Toolkit */
+    .skills-section {
+      padding: 6rem 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .skill-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .skill-block-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--accent-gold);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 6rem 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      box-shadow: 0 15px 35px var(--accent-gold-glow);
+    }
+
+    .contact-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 7rem;
+      }
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="brand">
+      <i class="fa-solid fa-bolt"></i> Gaurav<span>.Recruiter</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Career History</a></li>
+      <li><a href="#clients">Enterprise Clients</a></li>
+      <li><a href="#skills">Competencies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-action">
+      <a href="https://www.linkedin.com/in/gaurav-choudhary-94038a160/" target="_blank" class="btn btn-outline">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-gold">
+        <i class="fa-solid fa-paper-plane"></i> Get In Touch
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="container hero" id="about">
+    <div class="hero-left">
+      <div class="status-badge">
+        <span class="status-dot"></span> Available for Senior Technical Recruiting & Talent Lead Roles
+      </div>
+      <h1 class="hero-title">
+        High-Impact Sourcing & <span>US Staffing Delivery</span>
+      </h1>
+      <p class="hero-subtitle">
+        Senior Talent Acquisition Specialist with 7+ years of experience executing full-lifecycle recruitment across US IT, Engineering, Lifesciences, and Non-IT domains. Expert in MSP/VMS operations, advanced Boolean architectures, and direct client delivery.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">
+          <i class="fa-solid fa-envelope"></i> Contact Me Directly
+        </a>
+        <a href="https://www.linkedin.com/in/gaurav-choudhary-94038a160/" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> View LinkedIn Profile
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="avatar-box">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div class="hero-card-details">
+            <h4>Gaurav Choudhary</h4>
+            <p>Senior Recruiter & Talent Acquisition Specialist</p>
+          </div>
+        </div>
+        <div class="contact-spec-list">
+          <div class="contact-spec-item">
+            <span class="contact-spec-label"><i class="fa-solid fa-envelope"></i> Email</span>
+            <span class="contact-spec-value">
+              <a href="mailto:gauravrecruiter1993@gmail.com">gauravrecruiter1993@gmail.com</a>
+            </span>
+          </div>
+          <div class="contact-spec-item">
+            <span class="contact-spec-label"><i class="fa-solid fa-phone"></i> Phone</span>
+            <span class="contact-spec-value">
+              <a href="tel:+918076565466">+91-8076565466</a>
+            </span>
+          </div>
+          <div class="contact-spec-item">
+            <span class="contact-spec-label"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+            <span class="contact-spec-value">
+              <a href="https://www.linkedin.com/in/gaurav-choudhary-94038a160/" target="_blank">Connect on LinkedIn</a>
+            </span>
+          </div>
+          <div class="contact-spec-item">
+            <span class="contact-spec-label"><i class="fa-solid fa-location-dot"></i> Focus</span>
+            <span class="contact-spec-value">US IT & Non-IT Contingent Staffing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Strip -->
+  <section class="metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-item">
+        <h3>7+</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="metric-item">
+        <h3>2000+</h3>
+        <p>Candidate Submissions</p>
+      </div>
+      <div class="metric-item">
+        <h3>98%</h3>
+        <p>Offer Acceptance Rate</p>
+      </div>
+      <div class="metric-item">
+        <h3>25+</h3>
+        <p>Fortune 500 Clients</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Journey Timeline -->
+  <section class="container experience-section" id="experience">
+    <div class="section-title-wrap">
+      <span class="section-tag">Track Record</span>
+      <h2 class="section-title">Professional Experience</h2>
+    </div>
+
+    <div class="timeline">
+      <!-- Compunnel -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Senior Recruiter</div>
+              <div class="timeline-company">Compunnel Inc.</div>
+            </div>
+            <div class="timeline-duration">May 2025 – Present</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Spearhead end-to-end US IT and Non-IT contingent staffing across top enterprise MSP accounts, ensuring strict SLA compliance.</li>
+            <li>Execute targeted sourcing pipelines for high-precision technical, healthcare, and engineering requirements via Fieldglass, LinkedIn Recruiter, and internal channels.</li>
+            <li>Qualify candidates rigorously on work authorization (USC/GC/EAD), compensation (W2/C2C), and core competencies, minimizing submission churn.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Naztec -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Senior Recruiter</div>
+              <div class="timeline-company">Naztec International Group</div>
+            </div>
+            <div class="timeline-duration">Sep 2024 – Nov 2024</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Handled full-cycle recruiting, sourcing, screening, and onboarding for direct-hire and contingent roles.</li>
+            <li>Supported major accounts including the Jacksonville Transportation Authority (JTA), utilizing targeted Boolean architectures across LinkedIn and Monster.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stefanini -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Lead Recruiter</div>
+              <div class="timeline-company">Stefanini Group</div>
+            </div>
+            <div class="timeline-duration">Jun 2023 – Jul 2024</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Led a dedicated recruiting pod of 3-4 recruiters servicing enterprise automotive and engineering accounts, primarily Volvo.</li>
+            <li>Sourced and hired niche engineering roles: Design Engineers, DRE, Test/Validation Engineers, Digital Modelers, UX, and Data Engineers.</li>
+            <li>Managed Fieldglass VMS workflows, pay/bill rate calculations, markups, submittal sheet tracking, and client supplier review calls.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Talentburst -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Sr. Technical Recruiter</div>
+              <div class="timeline-company">Talentburst Pvt Ltd</div>
+            </div>
+            <div class="timeline-duration">Aug 2021 – May 2023</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Delivered across high-volume VMS programs (Beeline) under Allegis Global Solutions MSP.</li>
+            <li>Trained, mentored, and monitored submittal quotas and KPIs for junior recruiters.</li>
+            <li>Managed job postings, applicant tracking, and pipeline reporting through JobDiva.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cynet Systems -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Talent Acquisition Specialist</div>
+              <div class="timeline-company">Cynet Systems Pvt Ltd</div>
+            </div>
+            <div class="timeline-duration">May 2019 – Apr 2021</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Full lifecycle delivery across US staffing accounts via JobDiva, CareerBuilder, Dice, and Monster.</li>
+            <li>Conducted structured phone screenings, rate/salary negotiations, candidate presentation formatting, and post-offer engagement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Champ InfoSoft -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">US Recruiter</div>
+              <div class="timeline-company">Champ InfoSoft (Diskriter)</div>
+            </div>
+            <div class="timeline-duration">Dec 2017 – Feb 2019</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Sourced and qualified technical candidates for US client openings using Monster and Indeed.</li>
+            <li>Performed candidate resume tailoring, formatting, and submission prep for account managers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Clients Grid -->
+  <section class="clients-section" id="clients">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">Enterprise Experience</span>
+        <h2 class="section-title">Major Client Accounts Supported</h2>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-card">
+          <div class="client-name">Volvo</div>
+          <div class="client-category">Automotive & Engineering</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">L'Oréal</div>
+          <div class="client-category">Consumer & Supply Chain</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Amazon</div>
+          <div class="client-category">E-Commerce & Tech</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Ford Motor Co.</div>
+          <div class="client-category">Automotive Manufacturing</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Danaher OpCos</div>
+          <div class="client-category">Biotech & Lifesciences</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Intel</div>
+          <div class="client-category">Semiconductors & IT</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Visa Inc.</div>
+          <div class="client-category">FinTech & Payments</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">AbbVie</div>
+          <div class="client-category">Pharmaceuticals</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Toyota</div>
+          <div class="client-category">Automotive & Mobility</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Thermo Fisher</div>
+          <div class="client-category">Scientific Instruments</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">Johnson Controls</div>
+          <div class="client-category">Smart Building Systems</div>
+        </div>
+        <div class="client-card">
+          <div class="client-name">General Electric</div>
+          <div class="client-category">Industrial Tech</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competencies & Toolkit -->
+  <section class="container skills-section" id="skills">
+    <div class="section-title-wrap">
+      <span class="section-tag">Core Capabilities</span>
+      <h2 class="section-title">Recruitment Stack & Expertise</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-block-title">
+          <i class="fa-solid fa-sliders"></i> Sourcing & Search
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Advanced Boolean</span>
+          <span class="tag">Passive Headhunting</span>
+          <span class="tag">LinkedIn Recruiter</span>
+          <span class="tag">Dice Integrated</span>
+          <span class="tag">Monster Plus</span>
+          <span class="tag">CareerBuilder</span>
+          <span class="tag">ZipRecruiter</span>
+          <span class="tag">SignalHire</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">
+          <i class="fa-solid fa-network-wired"></i> ATS & VMS Systems
+        </div>
+        <div class="skill-tags">
+          <span class="tag">SAP Fieldglass</span>
+          <span class="tag">JobDiva</span>
+          <span class="tag">Beeline</span>
+          <span class="tag">SmartSearch</span>
+          <span class="tag">StafflinePro</span>
+          <span class="tag">Allegis MSP</span>
+          <span class="tag">TAPFIN</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">
+          <i class="fa-solid fa-clipboard-check"></i> Operational Discipline
+        </div>
+        <div class="skill-tags">
+          <span class="tag">W2 / C2C / 1099</span>
+          <span class="tag">Work Authorization (USC/GC/EAD)</span>
+          <span class="tag">Rate & Margin Calculation</span>
+          <span class="tag">RTR Sign-off</span>
+          <span class="tag">Offer Closure (98%)</span>
+          <span class="tag">BGC / Drug Test Tracking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Contact Section -->
+  <section class="container contact-section" id="contact">
+    <div class="contact-box">
+      <span class="section-tag">Let's Connect</span>
+      <h3>Direct Inquiries & Collaboration</h3>
+      <p>Reach out directly for talent acquisition partnerships, senior recruiter requirements, or staffing consultations.</p>
+      
+      <div class="contact-links">
+        <a href="mailto:gauravrecruiter1993@gmail.com" class="btn btn-gold">
+          <i class="fa-solid fa-envelope"></i> gauravrecruiter1993@gmail.com
+        </a>
+        <a href="tel:+918076565466" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> +91-8076565466
+        </a>
+        <a href="https://www.linkedin.com/in/gaurav-choudhary-94038a160/" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Gaurav Choudhary. All rights reserved. Senior Recruiter & US Staffing Delivery Specialist.</p>
+  </footer>
+
+</body>
+</html>
